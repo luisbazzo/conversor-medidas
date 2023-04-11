@@ -1,4 +1,4 @@
-<div class="container-lg">
+<div class="container-lg bg-transparent">
   <form>
     <div class="mb-4 mt-2 text-center">
       <h1 style="font-size: 3em;">Conversor de Medidas</h1>
@@ -7,61 +7,54 @@
     <div style="margin-bottom: 10px;">
 
       <p style="display: inline-block;">
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+        <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
           Selecionar medida
           <ion-icon class="position-relative" name="chevron-down-outline" style="font-size: 1.2em; top: 4px;"></ion-icon>
         </button>
       </p>
+      <input type="text" style="border: none; margin-left: 2%; font-size: 18px;" [value]="txtBtn" name="txtBtn" readonly>
       <div>
         <div class="collapse collapse-horizontal" id="collapseWidthExample">
-          <div class="card card-body position-absolute" style="width: 300px;">
-            <ul class="list-group" style="cursor: pointer;">
-              <li class="list-group-item">Metros (M)</li>
-              <li class="list-group-item">Centímetros (Cm)</li>
-              <li class="list-group-item">Polegadas (In)</li>
-              <li class="list-group-item">Pés (Ft)</li>
-              <li class="list-group-item">Quilometros (Km)</li>
-              <li class="list-group-item">Milhas (M)</li>
+            <ul class="list-group mb-4" style="cursor: pointer;">
+              <li class="list-group-item" (click)="selecionarMedida(1, 1)">Metros (M)</li>
+              <li class="list-group-item" (click)="selecionarMedida(2, 1)">Centímetros (Cm)</li>
+              <li class="list-group-item" (click)="selecionarMedida(3, 1)">Polegadas (In)</li>
+              <li class="list-group-item" (click)="selecionarMedida(4, 1)">Pés (Ft)</li>
+              <li class="list-group-item" (click)="selecionarMedida(5, 1)">Quilômetros (Km)</li>
+              <li class="list-group-item" (click)="selecionarMedida(6, 1)">Milhas (M)</li>
             </ul>
-          </div>
         </div>
       </div>
 
-      <input type="text" name="num1" class="form-control">
+      <input type="text" name="valorConverter" [(ngModel)]="valorConverter" class="form-control">
     </div>
     <div class="mb-3 mt-5">
 
       <p style="display: inline-block;">
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample2" aria-expanded="false" aria-controls="collapseWidthExample2">
+        <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample2" aria-expanded="false" aria-controls="collapseWidthExample2">
           Selecionar medida
           <ion-icon class="position-relative" name="chevron-down-outline" style="font-size: 1.2em; top: 4px;"></ion-icon>
         </button>
       </p>
+      <input type="text" style="border: none; margin-left: 2%; font-size: 18px;" [value]="txtBtn2" name="txtBtn2" readonly>
       <div>
         <div class="collapse collapse-horizontal" id="collapseWidthExample2">
-          <div class="card card-body position-absolute" style="width: 300px;">
-            <ul class="list-group" style="cursor: pointer;">
-              <li class="list-group-item">Metros (m)</li>
-              <li class="list-group-item">Centímetros (Cm)</li>
-              <li class="list-group-item">Polegadas (In)</li>
-              <li class="list-group-item">Pés (Ft)</li>
-              <li class="list-group-item">Quilometros (Km)</li>
-              <li class="list-group-item">Milhas (M)</li>
+            <ul class="list-group mb-4" style="cursor: pointer;">
+              <li class="list-group-item" (click)="selecionarMedida(1, 2)">Metros (M)</li>
+              <li class="list-group-item" (click)="selecionarMedida(2, 2)">Centímetros (Cm)</li>
+              <li class="list-group-item" (click)="selecionarMedida(3, 2)">Polegadas (In)</li>
+              <li class="list-group-item" (click)="selecionarMedida(4, 2)">Pés (Ft)</li>
+              <li class="list-group-item" (click)="selecionarMedida(5, 2)">Quilômetros (Km)</li>
+              <li class="list-group-item" (click)="selecionarMedida(6, 2)">Milhas (M)</li>
             </ul>
-          </div>
         </div>
       </div>
 
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="valorConvertido" [(ngModel)]="valorConvertido" readonly>
     </div>
 
       <div class="text-center">
-        <button class="btn btn-primary mt-4" style="font-size: 2em;">Converter</button>
-      </div>
-
-      <div class="mt-5">
-        <h2 class="text-center mb-4" style="font-size: 2.5em;">Resultado</h2>
-        <input type="text" name="num1" class="form-control">
+        <button class="btn btn-warning mt-4" style="font-size: 2em;" (click)="converter()">Converter</button>
       </div>
 
   </form>
